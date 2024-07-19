@@ -1,0 +1,33 @@
+:root {
+    /* Colors */
+    --bgcolor: #1C5550;
+    --font_green: #91B599;
+    --font_yellow: #C3B97F;
+    --font_white: #DFD9D9;
+    --bgcolorop: #00000033;
+
+    /* Fonts */
+    --allfonts: "Inter", sans-serif;
+    /* ფიგმაში ცვლადებში 700 ეწერა მაგრამ ნიმუშში bold არ არის, ამიტომ ლოკალურად აღარ შევცვალე და პირდაპირ 400 მივუთითე */
+    --sizeh: 24px;
+    --weighth: 400;
+    --lineheighth: 37px;
+
+    --sizes1h: 16px;
+    --weights1h: 400;
+    --lineheights1h: 27px;
+
+    --sizes1p: 14px;
+    --weights1p: 400;
+    --lineheights1p: 25px;
+
+    --sizeprice: 16px;
+    --weightprice: 700;
+    --lineheightprice: 24px;
+
+    --sizecard: 14px;
+    --weightcard: 700;
+    --lineheightcard: 22px;
+
+    --bradius: 4px;
+}

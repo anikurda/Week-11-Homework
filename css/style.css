@@ -1,52 +1,95 @@
 @import url(variables.css);
 
 .container {
+    width: min(100%, 1440px);
+    margin: auto;
     padding: 32px 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 48px 146px 146px 220px;
-    column-gap: 40px;
-    row-gap: 48px;
+    gap: 48px 40px;
+    grid-template-areas:
+        "header header header header"
+        "aside section1 section1 section2"
+        "aside section1 section1 section3"
+        "card1 card2 card3 card4";
+    background-color: var(--bgcolor);
 }
 
 /* Header */
 header {
-    background-color: aquamarine;
-    /* height: 48px; */
-    grid-column-start: 1;
-    grid-column-end: 5;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    grid-area: header;
 }
 
-ul {
+.header_nav ul {
     display: flex;
     column-gap: 80px;
 }
 
-button {
-    box-shadow: 0px 2px 4px -2px #DFD9D966 inset;
+.header_nav a {
+    font-family: var(--allfonts);
+    font-size: var(--sizeh);
+    font-weight: var(--weighth);
+    line-height: var(--lineheighth);
+    color: var(--font_white);
+}
+
+.header_buttons {
+    display: flex;
+    gap: 32px;
+}
+
+.user,
+.cart {
+    background: var(--bgcolorop);
+    border: none;
+    box-shadow: 0px 2px 4px -2px #DFD9D966 inset, 0px 2px 4px 0px var(--bgcolorop);
     width: 32px;
     height: 32px;
-    padding: 4px;
-    border-radius: 4px;
+    border-radius: var(--bradius);
+}
+
+.fa-user {
+    color: var(--font_green);
+    font-size: 16px;
+}
+
+.fa-cart-shopping {
+    color: var(--font_yellow);
+    font-size: 16px;
 }
 
 /* Aside */
 aside {
-    background-color: aquamarine;
-    grid-row-start: 2;
-    grid-row-end: 4;
+    background-color: var(--bgcolorop);
+    box-shadow: 0px 4px 4px 0px var(--bgcolorop) inset, 0px -1px 4px 0px #DFD9D966 inset;
+    grid-area: aside;
+    padding: 38px 40px;
+}
+
+h2 {
+    color: var(--font_yellow);
+    font-family: var(--allfonts);
+    font-size: var(--sizes1h);
+    font-weight: var(--weights1h);
+    line-height: var(--lineheights1h);
+    margin-bottom: 12px;
+}
+
+.section_nav a {
+    color: var(--font_green);
+    font-family: var(--allfonts);
+    font-size: var(--sizes1p);
+    font-weight: var(--weights1p);
+    line-height: var(--lineheights1p);
 }
 
 /* Section1 */
 .section1 {
-    background-color: aquamarine;
-    grid-row-start: 2;
-    grid-row-end: 4;
-    grid-column-start: 2;
-    grid-column-end: 4;
+    grid-area: section1;
 }
 
 .section1 img {
@@ -57,7 +100,8 @@ aside {
 
 /* Section2 */
 .section2 {
-    background-color: aquamarine;
+    background-color: var(--font_white);
+    grid-area: section2;
 }
 
 .section2 img {
@@ -68,26 +112,74 @@ aside {
 
 /* Section3 */
 .section3 {
-    background-color: aquamarine;
+    background-color: var(--font_white);
+    grid-area: section3;
+}
+
+.section3 img {
+    width: 100%;
+    height: 146px;
+    object-fit: cover;
 }
 
 
-/* Card1 */
+/* Cards */
+article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 220px;
+}
+
+article img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--font_white);
+    width: 100%;
+    height: 40px;
+}
+
+.card_section p {
+    margin-left: 8px;
+    font-family: var(--allfonts);
+    font-size: var(--sizeprice);
+    font-weight: var(--weightprice);
+    line-height: var(--lineheightprice);
+    color: var(--bgcolor);
+}
+
+.card_button {
+    font-family: var(--allfonts);
+    font-size: var(--sizecard);
+    font-weight: var(--weightcard);
+    line-height: var(--lineheightcard);
+    color: var(--font_white);
+    width: 97px;
+    height: 40px;
+    background-color: var(--font_yellow);
+    border: none;
+
+}
+
 .card1 {
-    background-color: aquamarine;
+    grid-area: card1;
 }
 
-/* Card2 */
 .card2 {
-    background-color: aquamarine;
+    grid-area: card2;
 }
 
-/* Card3 */
 .card3 {
-    background-color: aquamarine;
+    grid-area: card3;
 }
 
-/* Card4 */
 .card4 {
-    background-color: aquamarine;
+    grid-area: card4;
 }
